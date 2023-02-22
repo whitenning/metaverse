@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
 async connect() {
   try {
     await window.ethereum.enable();
-    window.location.reload
+    window.location.reload()
     this.metamask = true
   } catch (error) {
     // if not again trigger modal
@@ -93,6 +93,17 @@ ngOnInit(): void {
         this.globalService.setWallet(this.wallet);
       });
     });
+  }
+
+  if(this.wallet === ""){
+    this.modal = {
+      type: "caution",
+      header: 'WALLET IS NOT CONNECTED',
+      text: 'To work with our application, you have to connect wallet',
+      link: '',
+      linkText: '',
+      textButton: 'SKIP THIS STEP'
+    }
   
   }
 }

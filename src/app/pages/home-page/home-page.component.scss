@@ -20,14 +20,15 @@ main {
         -webkit-text-fill-color: transparent;
         width: 125%;
         font-weight: 700;
-font-size: 100px;
-letter-spacing: 5px;
+        font-size: 100px;
+        letter-spacing: 5px;
+        span {
+            -webkit-text-stroke: 1px white;
+            color: var(--color-bg)!important;
+            -webkit-text-fill-color: var(--color-bg);
+        }
+       }
 
-       }
-       img {
-        height: 74px;
-        margin: 0 1rem ;
-       }
        p {
         
         height: 95px;

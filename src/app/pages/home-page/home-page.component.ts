@@ -45,6 +45,7 @@ export class HomePageComponent implements OnInit{
   }
   removeUser(){
   this.usersList.items.shift()
+
   }
 usersList: any
 // Submit form function
