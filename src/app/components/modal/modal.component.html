@@ -1,0 +1,12 @@
+<div class="modal">
+    <section>
+        <h2 *ngIf="modal.type === 'error'" style="color: brown">{{modal.header}}</h2>
+        <h2 *ngIf="modal.type === 'success'" style="color: greenyellow">{{modal.header}}</h2>
+        <h2 *ngIf="modal.type === 'caution'">{{modal.header}}</h2>
+        <p>
+          {{modal.text}}
+          <a *ngIf="modal.link != ''" href="{{modal.link}}" target="_blank">{{modal.linkText}}</a>
+        </p>
+        <button class="btn-primary" (click)="closeModal.emit(true)">{{modal.textButton}}</button>
+    </section>
+</div>

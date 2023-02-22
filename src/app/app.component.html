@@ -1,0 +1,17 @@
+<div class="app">
+  <main class="container">
+    <section>
+      <nav>
+        <a href="/">LOGO</a>
+        <button class="btn-primary"  (click)="connect()" *ngIf="wallet === ''">CONNECT METAMASK</button>
+        <button class="btn-primary" [ngClass]="{connected: wallet != ''}" (click)="connect()" *ngIf="wallet != ''">{{wallet}}</button>
+      </nav>
+      <router-outlet></router-outlet>
+   
+    </section>
+  </main>
+  <app-modal *ngIf="!metamask" (closeModal)="isModelActive()" [modal]="modal"></app-modal>
+  
+
+</div>
+

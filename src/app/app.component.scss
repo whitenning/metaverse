@@ -1,0 +1,30 @@
+.app {
+    main {
+        z-index: 1;
+           section {
+            margin: 0 4rem;
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                a{
+                    font-size: 18px;
+                    margin-top: 14px;
+                    padding: 12px 86px;
+                    border: 1px dashed #C7C7C7;
+                    background-color: #5A5A5A;
+                }
+                button.connected {
+                    width: 145px;
+                    white-space: nowrap;
+                    overflow: hidden; 
+                    text-overflow: ellipsis;
+                    background-color: transparent;
+                    color: var(--color-primary);
+                    padding: 5px;
+                }
+            }
+           }
+        
+        } 
+}

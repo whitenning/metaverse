@@ -1,0 +1,342 @@
+main {
+    
+ position: relative;
+
+    // LANDING SECTION START // 
+   section.landing {
+    display: flex;
+  
+
+   
+    margin-top: 3rem;
+    .text {
+        z-index: 12;
+        position: relative;
+  margin-top: 201px;
+       h2 {
+        z-index: 100;
+        background: radial-gradient(circle 200px at 81% 50%, var(--color-primary) 80%, var(--color-primary) 80%, white 0%, white 80%, );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: 125%;
+        font-weight: 700;
+font-size: 100px;
+letter-spacing: 5px;
+
+       }
+       img {
+        height: 74px;
+        margin: 0 1rem ;
+       }
+       p {
+        
+        height: 95px;
+        margin-top: 45px;
+        margin-bottom: 60px;
+        width: 420px;
+        font-family: "Avenir", sans-serif;
+       }
+    }
+    }
+
+ // PLANET START //
+    .planet {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        justify-content: center;
+        right: 150px;
+        top: 2px;
+        border-radius: 50%;
+        position: relative;
+        .animation-entry {
+            position: absolute;
+            width: 566px;
+            height: 566px;
+            border-radius: 50%;
+            z-index: 100;
+        }
+            span{
+                z-index: -1;
+                position: absolute;
+                width: 370px;
+                height: 370px;
+                background-color: rgba(30, 30, 32,0.5);
+                border: 1px solid #323232;
+                border-radius: 50%;
+                
+            }
+
+            span.nd {
+                width: 384px;
+                height: 384px;
+                z-index: -2;
+            }
+            span.rd {
+                width: 446px;
+                height: 446px;
+                z-index: -3;
+                border: none;
+            }
+            span.th {
+                width: 526px;
+                z-index: -4;
+                height: 526px;
+                background: #171719;
+                filter: blur(8px);
+            }
+    
+            span.fifth {
+            border-top-left-radius: 0;
+            border-top-right-radius: 253px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 253px;
+          
+            border-style: solid;
+            border-width: 1px;
+            border-color: var(--color-primary);
+            border-left: none;
+            width: 253px;
+            height: 506px;
+            right: -96px;
+            background: none;  
+            div {
+                width: 6px;
+                height: 6px;
+                position: absolute;
+                top: -3px;
+                border-radius: 50%;
+                left: -3px;
+                background: var(--color-primary);
+            }
+            div.st {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                width: auto;
+                height: auto;
+                border-radius: 15px;
+                background-color: var(--color-white);
+                font-size: 14px;
+                color: black;
+                padding: 8px 12px;
+                top: -16px;
+                left: -61px;
+          button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+         
+            width: 12px;
+            height: 12px;
+            box-shadow: -2px -2px 6px rgba(50, 50, 50, 0.25), 2px 2px 6px rgba(50, 50, 50, 0.25);
+            p {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--color-primary);
+            }
+          }
+            }
+            div.nd {
+                top: 250px;
+                right: 0;
+                left: calc(100% - 2.4px);
+            }
+            div.rd {
+                
+                top: calc(100% - 2px);
+                left: 0;
+            }
+            }
+           
+            img {
+                z-index: 1;
+              
+            }
+        }
+       // PLANET END // 
+
+     // STATS START // 
+    .stats {
+        margin-top: 220px;
+        margin-left: 27px;
+        text-align: center;
+        h2 {
+            margin-bottom: 42px;
+            
+            font-size: 26px;
+        }
+        li {
+            width: 199px;
+            padding: 8px 0;
+            .count {
+                font-size: 23px;
+                color: var(--color-primary);
+                margin-bottom: 12px;
+            }
+            .description {
+                font-size: 19px;
+            }
+        }
+        li.border {
+            border-top: 0.5px solid rgba(210, 196, 196, 0.5);
+            border-bottom: 0.5px solid rgba(210, 196, 196, 0.5)
+        }
+   }
+ // STATS END // 
+ // LANDING SECTION END // 
+
+// ============================================================ //
+
+
+   // REGISTRATION SECTION START // 
+   section.beta {
+    margin-top: 3rem;
+    padding-bottom: 333px;
+    display: flex;
+    gap: 136px;
+    h2 {
+        font-size: 36px;
+        color: var(--color-primary);
+        margin-bottom: 18px;
+    }
+
+    //FORM 
+    .registration {
+     
+        p {
+            width: 420px;
+            font-family: "Avenir", sans-serif;
+            margin-bottom: 36px;
+        }
+        form {
+            width: 420px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+            h3 {
+                font-size: 24px;
+                margin-bottom: 5px;
+            }
+            h4 {
+                font-size: 32px;
+                color: var(--color-primary)
+            }
+            input {
+                width: 100%;
+                background: transparent;
+                border: 1px solid #FFFFFF;
+                border-radius: 30px;
+            }
+            input[type=text], input[type=email] {
+                padding: 0.8rem 1.2rem;
+              
+            }
+            button {
+                margin-top: 6px;
+                align-self: flex-start;
+            }
+        }
+    }
+ //FORM
+
+  // PARTICIPATION LIST
+    .user-list {
+                  /* width of scrollbar */
+
+  
+        h2 {
+            margin-bottom: 2rem;
+        }
+        header {
+            display: grid;
+            grid-template-columns: 183px 258px 227px;
+            h3 {
+                font-size: 24px;
+            }
+        }
+        ul {
+           
+            margin-top: 1rem;
+            height: 550px;
+            width: 696px;
+            overflow: hidden;
+            overflow-y: scroll;
+  
+
+  
+            li {
+                width: 668px;
+                display: grid;
+                grid-template-columns: 183px 258px 227px;
+                font-family: 'Avenir', sans-serif;
+                align-items: center;
+                font-size: 14px;
+      
+                height: 50px;
+                border-top: 1px solid #FFFFFF;
+                border-bottom: 1px solid #FFFFFF;
+          
+               a, div {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                cursor: pointer;
+                p {
+                    white-space: nowrap;
+                    overflow: hidden; 
+                    text-overflow: ellipsis;
+                    margin-right: 1.1rem;
+                }
+               } 
+            }
+
+            li.active {
+                .close-button {
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                  }
+                  
+                  .close-button::before,
+                  .close-button::after {
+                    content: '';
+                    position: absolute;
+                    width: 1px;
+                    height: 11px;
+                    top: 2px;
+                    left: 50%;
+                    transform: translateX(-50%) rotate(45deg);
+                    background-color: var(--color-white);
+                  }
+                  
+                  .close-button::after {
+                    transform: translateX(-50%) rotate(-45deg);
+                  }
+               div {
+                cursor: initial;
+                p {
+
+                    color: var(--color-primary);
+                }
+               } 
+          
+            }
+        }
+    }
+
+
+    // Loading spinner adjust
+    .spinner {
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        margin: 0 auto;
+    }
+
+   }
+      // REGISTRATION SECTION END // 
+    }

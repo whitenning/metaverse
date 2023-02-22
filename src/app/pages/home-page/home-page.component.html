@@ -1,0 +1,91 @@
+<main>
+   <section class="landing">
+    <div class="text">
+        <h2>EXPLORE YOUR OWN PLANET<br>
+        IN <img src="assets/text/headerText2.png" alt="">METAVERSE</h2>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+       </div>
+       <div class="planet">
+            <div class="animation-entry" (mousemove)="movePlanet($event)"></div>
+            <span class="mask st"></span>
+            <span class="mask nd"></span>
+            <span class="mask rd"></span>
+            <span class="mask th"></span>
+           <span class="mask fifth">
+            <div class="st">Q1 2022 <button><p></p></button></div>
+            <div class="nd"></div>
+            <div class="rd"></div>
+           </span>
+           
+        
+        <img src="assets/images/planet.png"  alt="">
+    </div>
+    <div class="stats">
+        <h2>ROADMAP STATS</h2>
+        <ul> 
+            <li>
+                <div class="count">12, 345</div>
+                <div class="description">Lorem, ipsum dolor.</div>
+            </li>
+            <li class="border">
+                <div class="count">12, 345</div>
+                <div class="description">Lorem, ipsum dolor.</div>
+            </li>
+            <li>
+                <div class="count">12, 345</div>
+                <div class="description">Lorem, ipsum dolor.</div>
+            </li>
+        </ul>
+    </div>
+   </section>
+   <section class="beta">
+
+    <div class="registration">
+        <h2>BETA TEST REGISTRATION</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUpBetaSubmit(signUpForm.value)">
+
+        <div class="name">
+            <h3 *ngIf="!submitted && !signUpForm.controls['username'].dirty || !signUpForm.controls['username'].errors">NAME</h3>
+            <h3 *ngIf="signUpForm.controls['username'].dirty && signUpForm.controls['username'].errors" style="color: brown">YOUR NAME MUST TO CONTAIN 4 LETTERS</h3>
+            <input type="text" *ngIf="user === null" placeholder="We will display your name in participation list" formControlName="username" name="username" >
+            <h4 *ngIf="user != null">{{user.username}}</h4>
+        </div>
+
+        <div class="email">
+            <h3 *ngIf="!submitted && !signUpForm.controls['email'].dirty || !signUpForm.controls['email'].errors">EMAIL</h3>
+            <h3 *ngIf="signUpForm.controls['email'].dirty && signUpForm.controls['email'].errors" style="color: brown">WRONG EMAIL FORMAT</h3>
+            
+            <input *ngIf="user === null"  type="email" placeholder="We will display your email in participation list" formControlName="email" name="email" >
+            <h4 *ngIf="user != null">{{user.email}}</h4>
+        </div>
+
+        <button type="submit" class="btn-primary" *ngIf="user === null" >GET EARLY ACCESS</button>
+        <button class="btn-primary" *ngIf="user != null" >LIST ME TO THE TABLE</button>
+
+    </form>
+    </div>
+
+
+    <div class="user-list" *ngIf="usersList && !isLoading || user !=null && !isLoading">
+        <h2 style="color: white">PARTICIPATION (ENABLE ONLY FOR PARTICIPANTS)</h2>
+        <header><h3>NAME</h3><h3>EMAIL</h3><h3>WALLET</h3></header>
+        <ul>
+            <li *ngFor="let userList of usersList.items; let i = index" [ngClass]="{active: userList.address === user.address}">
+                <a class="name"  *ngIf="userList.address != user.address" [routerLink]="['/user', userList.address]"><p>{{userList.username}}</p></a>
+                <a class="email" *ngIf="userList.address != user.address" [routerLink]="['/user', userList.address]"><p>{{userList.email}}</p></a>
+                <a class="wallet" *ngIf="userList.address != user.address" [routerLink]="['/user', userList.address]"><p>{{userList.address}}</p></a>
+
+                <div class="name"  *ngIf="userList.address === user.address"><p>{{userList.username}}</p></div>
+                <div class="email" *ngIf="userList.address === user.address"><p>{{userList.email}}</p></div>
+                <div class="wallet" *ngIf="userList.address === user.address"><p>{{userList.address}}</p><div class="close-button" *ngIf="userList.address === user.address" (click)="removeUser()"></div></div>
+            </li>
+        </ul>
+    </div>
+   
+        <div class="spinner" *ngIf="isLoading && user != null"></div>
+     
+
+   </section>
+   <app-modal *ngIf="submitted && !modalError" (closeModal)="isModalActive()" [modal]="modal"></app-modal>
+</main> 
